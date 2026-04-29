@@ -4,11 +4,13 @@ import API_URL from '../config/api';
 import GlassCard from '../components/GlassCard';
 import { Shield, Zap, Copy, ExternalLink, Activity, Cpu, Globe, Server, Check } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 const Dashboard = () => {
   const [data, setData] = useState(null);
   const [copiedId, setCopiedId] = useState(null);
   const [error, setError] = useState(null);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -31,9 +33,9 @@ const Dashboard = () => {
 
   if (error) return (
     <div className="flex flex-col items-center justify-center h-screen bg-dark p-6 text-center">
-      <div className="text-red-500 mb-4 font-black tracking-widest text-xs uppercase">Error de Conexión</div>
+      <div className="text-red-500 mb-4 font-black tracking-widest text-xs uppercase">{t('common.error')}</div>
       <p className="text-gray-500 text-sm max-w-xs">{error}</p>
-      <button onClick={() => window.location.reload()} className="mt-8 px-8 py-3 bg-white/5 border border-white/10 rounded-xl text-white text-[10px] font-bold uppercase tracking-widest">Reintentar</button>
+      <button onClick={() => window.location.reload()} className="mt-8 px-8 py-3 bg-white/5 border border-white/10 rounded-xl text-white text-[10px] font-bold uppercase tracking-widest">{t('common.retry')}</button>
     </div>
   );
 
@@ -64,7 +66,7 @@ const Dashboard = () => {
           className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full glass border-accent/20 text-accent text-[10px] font-bold tracking-[0.3em] uppercase"
         >
           <Activity size={12} className="animate-pulse" />
-          <span>Infraestructura Activa</span>
+          <span>{t('hero.active_infra')}</span>
         </motion.div>
         <motion.h1 
           initial={{ opacity: 0, y: 20 }}
@@ -72,7 +74,7 @@ const Dashboard = () => {
           transition={{ delay: 0.1 }}
           className="text-4xl md:text-6xl font-black text-white leading-tight"
         >
-          Nexus <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-secondary">CloudFront</span>
+          Nexus <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-secondary">{t('hero.cloudfront')}</span>
         </motion.h1>
       </header>
 
@@ -89,7 +91,7 @@ const Dashboard = () => {
                   </div>
                 </div>
                 <div className="space-y-2 flex-1">
-                  <div className="text-[10px] text-gray-500 font-bold uppercase tracking-widest">Nodo Central Primario</div>
+                  <div className="text-[10px] text-gray-500 font-bold uppercase tracking-widest">{t('hero.main_node')}</div>
                   <div className="flex flex-col md:flex-row items-center md:space-x-4 space-y-3 md:space-y-0">
                     <h2 className="text-xl sm:text-2xl md:text-4xl font-mono font-bold text-white tracking-tighter break-all">
                       {activeDomain?.url || 'Nexus Cloud'}
@@ -103,7 +105,7 @@ const Dashboard = () => {
                   </div>
                   <div className="flex items-center justify-center md:justify-start space-x-2">
                     <div className="w-2 h-2 bg-emerald rounded-full animate-pulse shadow-[0_0_10px_rgba(16,185,129,0.5)]"></div>
-                    <span className="text-emerald font-bold tracking-widest uppercase text-[10px]">Totalmente Operativo</span>
+                    <span className="text-emerald font-bold tracking-widest uppercase text-[10px]">{t('hero.operational')}</span>
                   </div>
                 </div>
               </div>
@@ -113,9 +115,9 @@ const Dashboard = () => {
           {/* Infrastructure Stats Grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {[
-              { label: 'Latencia', value: '1.2ms', icon: <Zap className="text-accent" /> },
-              { label: 'Estabilidad', value: '100%', icon: <Shield className="text-emerald" /> },
-              { label: 'Nodos Globales', value: '24/24', icon: <Globe className="text-secondary" /> }
+              { label: t('stats.latency'), value: '1.2ms', icon: <Zap className="text-accent" /> },
+              { label: t('stats.stability'), value: '100%', icon: <Shield className="text-emerald" /> },
+              { label: t('stats.nodes'), value: '24/24', icon: <Globe className="text-secondary" /> }
             ].map((stat, i) => (
               <GlassCard key={i} className="py-6 px-6 flex items-center space-x-4 border-white/5" hover={true}>
                 <div className="p-3 glass rounded-xl">{stat.icon}</div>
@@ -130,7 +132,7 @@ const Dashboard = () => {
 
         {/* Secondary Nodes Orbital Menu */}
         <div className="space-y-6">
-          <h3 className="text-xs font-bold text-gray-400 tracking-[0.4em] uppercase px-2">Nodos Secundarios</h3>
+          <h3 className="text-xs font-bold text-gray-400 tracking-[0.4em] uppercase px-2">{t('hero.secondary_nodes')}</h3>
           <div className="space-y-4">
             {data.domains.filter(d => d.type === 'backup').length > 0 ? (
               data.domains.filter(d => d.type === 'backup').map((domain) => (
@@ -161,7 +163,7 @@ const Dashboard = () => {
             ) : (
               <div className="text-center py-10 bg-white/[0.01] border border-dashed border-white/5 rounded-3xl">
                 <Globe size={32} className="mx-auto text-white/5 mb-3" />
-                <p className="text-[10px] text-gray-600 font-bold uppercase tracking-widest">No hay nodos secundarios configurados</p>
+                <p className="text-[10px] text-gray-600 font-bold uppercase tracking-widest">{t('common.no_secondary')}</p>
               </div>
             )}
           </div>

@@ -2,16 +2,28 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Hexagon, ShoppingCart, Activity } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { t, i18n } = useTranslation();
   const location = useLocation();
 
   const navItems = [
-    { name: 'Inicio', path: '/', icon: <Hexagon size={18} /> },
-    { name: 'Tienda', path: '/buy', icon: <ShoppingCart size={18} /> },
-    { name: 'Estado', path: '/status', icon: <Activity size={18} /> },
+    { name: t('navbar.home'), path: '/', icon: <Hexagon size={18} /> },
+    { name: t('navbar.shop'), path: '/buy', icon: <ShoppingCart size={18} /> },
+    { name: t('navbar.status'), path: '/status', icon: <Activity size={18} /> },
   ];
+
+  const languages = [
+    { code: 'es', label: 'ES', flag: '🇪🇸' },
+    { code: 'en', label: 'EN', flag: '🇺🇸' },
+    { code: 'pt', label: 'PT', flag: '🇧🇷' }
+  ];
+
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+  };
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-8">
@@ -58,6 +70,23 @@ const Navbar = () => {
           ))}
         </div>
 
+        {/* Language Switcher */}
+        <div className="hidden md:flex items-center ml-4 border-l border-white/10 pl-4 space-x-2">
+          {languages.map((lang) => (
+            <button
+              key={lang.code}
+              onClick={() => changeLanguage(lang.code)}
+              className={`w-8 h-8 rounded-lg text-[10px] font-bold transition-all duration-300 ${
+                i18n.language === lang.code 
+                  ? 'bg-accent text-dark' 
+                  : 'text-gray-500 hover:text-white hover:bg-white/5'
+              }`}
+            >
+              {lang.label}
+            </button>
+          ))}
+        </div>
+
         {/* Mobile menu button */}
         <div className="md:hidden">
           <button
@@ -99,6 +128,26 @@ const Navbar = () => {
                 <span>{item.name}</span>
               </Link>
             ))}
+            
+            {/* Mobile Language Switcher */}
+            <div className="flex items-center justify-center pt-4 border-t border-white/5 space-x-4">
+              {languages.map((lang) => (
+                <button
+                  key={lang.code}
+                  onClick={() => {
+                    changeLanguage(lang.code);
+                    setIsOpen(false);
+                  }}
+                  className={`px-4 py-2 rounded-xl text-xs font-black transition-all ${
+                    i18n.language === lang.code 
+                      ? 'text-accent' 
+                      : 'text-gray-500'
+                  }`}
+                >
+                  {lang.flag} {lang.label}
+                </button>
+              ))}
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

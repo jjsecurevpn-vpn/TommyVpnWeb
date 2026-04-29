@@ -1,0 +1,40 @@
+{
+  "navbar": {
+    "home": "Home",
+    "shop": "Shop",
+    "status": "Status"
+  },
+  "hero": {
+    "active_infra": "Active Infrastructure",
+    "cloudfront": "CloudFront",
+    "main_node": "Primary Central Node",
+    "secondary_nodes": "Secondary Nodes",
+    "operational": "Fully Operational",
+    "disconnected": "Disconnected"
+  },
+  "stats": {
+    "latency": "Latency",
+    "stability": "Stability",
+    "nodes": "Global Nodes",
+    "uptime": "Global Uptime",
+    "redundancy": "Redundancy"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Connection Error",
+    "retry": "Retry",
+    "no_data": "No data available",
+    "no_secondary": "No secondary nodes configured",
+    "no_plans": "No plans available at this time",
+    "buy_now": "BUY NOW"
+  },
+  "buy": {
+    "hero_title": "Available Plans",
+    "hero_subtitle": "Infrastructure",
+    "hero_accent": "No Monthly Fees",
+    "features_title": "Premium Features",
+    "faq_title": "Frequently Asked Questions",
+    "payment_title": "Supported Payment Methods",
+    "recommended": "Recommended"
+  }
+}

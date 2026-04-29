@@ -1,0 +1,40 @@
+{
+  "navbar": {
+    "home": "Início",
+    "shop": "Loja",
+    "status": "Estado"
+  },
+  "hero": {
+    "active_infra": "Infraestrutura Ativa",
+    "cloudfront": "CloudFront",
+    "main_node": "Nó Central Primário",
+    "secondary_nodes": "Nós Secundários",
+    "operational": "Totalmente Operacional",
+    "disconnected": "Desconectado"
+  },
+  "stats": {
+    "latency": "Latência",
+    "stability": "Estabilidade",
+    "nodes": "Nós Globais",
+    "uptime": "Uptime Global",
+    "redundancy": "Redundância"
+  },
+  "common": {
+    "loading": "Carregando...",
+    "error": "Erro de Conexão",
+    "retry": "Repetir",
+    "no_data": "Não há dados disponíveis",
+    "no_secondary": "Não há nós secundários configurados",
+    "no_plans": "Não há planos disponíveis no momento",
+    "buy_now": "COMPRAR AGORA"
+  },
+  "buy": {
+    "hero_title": "Planos Disponíveis",
+    "hero_subtitle": "Infraestrutura",
+    "hero_accent": "Sem Mensalidades",
+    "features_title": "Recursos Premium",
+    "faq_title": "Perguntas Frequentes",
+    "payment_title": "Métodos de Pagamento Suportados",
+    "recommended": "Recomendado"
+  }
+}

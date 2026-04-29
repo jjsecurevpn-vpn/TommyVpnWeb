@@ -4,12 +4,14 @@ import API_URL from '../config/api';
 import GlassCard from '../components/GlassCard';
 import { CheckCircle, ShoppingCart, ShieldCheck, Zap, Globe, MessageCircle, ChevronDown, ChevronUp, CreditCard } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 const Buy = () => {
   const [plans, setPlans] = useState([]);
   const [openFaq, setOpenFaq] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const fetchPlans = async () => {
@@ -49,9 +51,9 @@ const Buy = () => {
 
   if (error) return (
     <div className="flex flex-col items-center justify-center h-screen bg-dark p-6 text-center">
-      <div className="text-red-500 mb-4 font-black tracking-widest text-xs uppercase">Error de Conexión</div>
+      <div className="text-red-500 mb-4 font-black tracking-widest text-xs uppercase">{t('common.error')}</div>
       <p className="text-gray-500 text-sm max-w-xs">{error}</p>
-      <button onClick={() => window.location.reload()} className="mt-8 px-8 py-3 bg-white/5 border border-white/10 rounded-xl text-white text-[10px] font-bold uppercase tracking-widest">Reintentar</button>
+      <button onClick={() => window.location.reload()} className="mt-8 px-8 py-3 bg-white/5 border border-white/10 rounded-xl text-white text-[10px] font-bold uppercase tracking-widest">{t('common.retry')}</button>
     </div>
   );
 
@@ -65,10 +67,10 @@ const Buy = () => {
     <div className="pt-32 pb-24 px-6 max-w-6xl mx-auto space-y-32">
       {/* Hero Section */}
       <section className="text-center space-y-4">
-        <h2 className="text-accent text-[10px] font-bold tracking-[0.4em] uppercase">Planes Disponibles</h2>
+        <h2 className="text-accent text-[10px] font-bold tracking-[0.4em] uppercase">{t('buy.hero_title')}</h2>
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-white leading-tight">
-          Infraestructura <br/>
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-secondary">Sin Mensualidades</span>
+          {t('buy.hero_subtitle')} <br/>
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-secondary">{t('buy.hero_accent')}</span>
         </h1>
         <p className="text-gray-400 max-w-lg mx-auto">Activación inmediata tras el pago único. Soporte humano real 24/7.</p>
       </section>
@@ -80,7 +82,7 @@ const Buy = () => {
             <GlassCard key={plan.id} className={`relative flex flex-col justify-between p-10 w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] max-w-sm ${plan.recommended ? 'glow-cyan border-accent/30' : 'border-white/5'}`}>
               {plan.recommended && (
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-accent text-dark px-4 py-1 rounded-full text-[10px] font-black tracking-widest uppercase">
-                  Recomendado
+                  {t('buy.recommended')}
                 </div>
               )}
               
@@ -110,14 +112,14 @@ const Buy = () => {
                 className="mt-10 w-full bg-accent hover:bg-emerald-400 text-dark font-black py-4 rounded-2xl transition-all shadow-lg shadow-accent/20 flex items-center justify-center space-x-3 group"
               >
                 <ShoppingCart size={20} className="group-hover:-translate-y-1 transition-transform" />
-                <span>COMPRAR AHORA</span>
+                <span>{t('common.buy_now')}</span>
               </a>
             </GlassCard>
           ))
         ) : (
           <div className="w-full text-center py-20">
             <ShoppingCart size={48} className="mx-auto text-white/10 mb-4" />
-            <p className="text-gray-500 font-bold uppercase tracking-[0.3em] text-xs">No hay planes disponibles en este momento</p>
+            <p className="text-gray-500 font-bold uppercase tracking-[0.3em] text-xs">{t('common.no_plans')}</p>
           </div>
         )}
       </div>
@@ -126,7 +128,7 @@ const Buy = () => {
       <section className="space-y-12">
         <div className="text-center space-y-2">
           <h2 className="text-secondary text-[10px] font-bold tracking-[0.4em] uppercase">Beneficios</h2>
-          <h3 className="text-3xl font-black text-white">Todo incluido en un solo pago</h3>
+          <h3 className="text-3xl font-black text-white">{t('buy.features_title')}</h3>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {features.map((f, i) => (

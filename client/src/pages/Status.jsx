@@ -4,11 +4,13 @@ import API_URL from '../config/api';
 import GlassCard from '../components/GlassCard';
 import { CheckCircle, Clock, Server, Activity, Zap, Shield, Copy, Check } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 const Status = () => {
   const [data, setData] = useState(null);
   const [copied, setCopied] = useState(false);
   const [error, setError] = useState(null);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -31,9 +33,9 @@ const Status = () => {
 
   if (error) return (
     <div className="flex flex-col items-center justify-center h-screen bg-dark p-6 text-center">
-      <div className="text-red-500 mb-4 font-black tracking-widest text-xs uppercase">Error de Conexión</div>
+      <div className="text-red-500 mb-4 font-black tracking-widest text-xs uppercase">{t('common.error')}</div>
       <p className="text-gray-500 text-sm max-w-xs">{error}</p>
-      <button onClick={() => window.location.reload()} className="mt-8 px-8 py-3 bg-white/5 border border-white/10 rounded-xl text-white text-[10px] font-bold uppercase tracking-widest">Reintentar</button>
+      <button onClick={() => window.location.reload()} className="mt-8 px-8 py-3 bg-white/5 border border-white/10 rounded-xl text-white text-[10px] font-bold uppercase tracking-widest">{t('common.retry')}</button>
     </div>
   );
 
@@ -53,7 +55,7 @@ const Status = () => {
       <header className="space-y-4 text-center">
         <div className="inline-flex items-center space-x-2 px-4 py-1 rounded-full glass border-accent/20 text-accent text-[10px] font-bold tracking-[0.3em] uppercase">
           <Activity size={12} className="animate-pulse" />
-          <span>Sistemas Operativos</span>
+          <span>{t('hero.active_infra')}</span>
         </div>
         <h1 className="text-4xl md:text-5xl font-black text-white tracking-tighter">Estado de la <span className="text-accent">Red Nexus</span></h1>
         <p className="text-gray-400 max-w-md mx-auto">Monitoreo en tiempo real de nodos globales y latencia de borde.</p>
@@ -69,7 +71,7 @@ const Status = () => {
               </div>
             </div>
             <div className="space-y-1 flex-1">
-              <div className="text-[10px] text-gray-500 font-bold uppercase tracking-widest">Nodo Central Primario</div>
+              <div className="text-[10px] text-gray-500 font-bold uppercase tracking-widest">{t('hero.main_node')}</div>
               <div className="flex flex-col md:flex-row items-center md:space-x-3 space-y-2 md:space-y-0">
                 <h2 className="text-lg sm:text-2xl md:text-3xl font-mono font-bold text-white tracking-tighter break-all">
                   {activeDomain ? activeDomain.url : 'SIN NODO ACTIVO'}
@@ -85,7 +87,7 @@ const Status = () => {
               <div className="flex items-center justify-center md:justify-start space-x-2">
                 <div className={`w-1.5 h-1.5 rounded-full ${activeDomain ? 'bg-emerald animate-pulse shadow-[0_0_8px_rgba(16,185,129,0.5)]' : 'bg-red-500'}`}></div>
                 <span className={`${activeDomain ? 'text-emerald' : 'text-red-500'} font-bold tracking-widest uppercase text-[10px]`}>
-                  {activeDomain ? 'Totalmente Operativo' : 'Desconectado'}
+                  {activeDomain ? t('hero.operational') : t('hero.disconnected')}
                 </span>
               </div>
             </div>
@@ -103,9 +105,9 @@ const Status = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {[
-          { label: 'Uptime Global', value: '99.9%', icon: <Activity size={18} /> },
-          { label: 'Latencia Borde', value: '1.2ms', icon: <Zap size={18} /> },
-          { label: 'Redundancia', value: 'Nivel 3', icon: <Shield size={18} /> }
+          { label: t('stats.uptime'), value: '99.9%', icon: <Activity size={18} /> },
+          { label: t('stats.latency'), value: '1.2ms', icon: <Zap size={18} /> },
+          { label: t('stats.redundancy'), value: 'Nivel 3', icon: <Shield size={18} /> }
         ].map((stat, i) => (
           <GlassCard key={i} className="text-center p-8 space-y-2 border-white/5" hover={true}>
             <div className="mx-auto w-10 h-10 flex items-center justify-center glass rounded-xl text-accent mb-2">
