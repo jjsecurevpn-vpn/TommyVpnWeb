@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@theme {
+  --color-dark: #050505;
+  --color-accent: #00f2ff; /* Electric Cyan */
+  --color-secondary: #ff00c8; /* Cyber Pink */
+  --color-surface: rgba(255, 255, 255, 0.03);
+  --color-emerald: #10b981;
+  --color-amber: #f59e0b;
+}
+
+:root {
+  font-family: 'Outfit', 'Inter', system-ui, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: dark;
+  color: rgba(255, 255, 255, 0.9);
+  background-color: #050505;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: radial-gradient(circle at 50% -20%, #1a1a2e 0%, #050505 80%);
+}
+
+#root {
+  width: 100%;
+}
+
+@utility glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+@utility glass-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+@utility glow-cyan {
+  box-shadow: 0 0 30px rgba(0, 242, 255, 0.15);
+}
+
+@utility glow-pink {
+  box-shadow: 0 0 30px rgba(255, 0, 200, 0.15);
+}
+
+.neo-blur {
+  filter: blur(60px);
+}

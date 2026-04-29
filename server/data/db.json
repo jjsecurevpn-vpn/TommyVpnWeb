@@ -1,0 +1,26 @@
+{
+  "domains": [],
+  "plans": [
+    {
+      "id": 1,
+      "name": "CloudFront — Pago único",
+      "price": "20",
+      "currency": "USD",
+      "features": [
+        "Dominio CDN en AWS",
+        "Apuntamientos DNS incluidos",
+        "Transferencia ilimitada",
+        "SSL/HTTPS automático",
+        "Soporte 24/7",
+        "Sin mensualidades",
+        "Soporte Premium"
+      ],
+      "recommended": true
+    }
+  ],
+  "status": {
+    "active": true,
+    "lastCheck": "2026-04-29T11:45:00Z",
+    "provider": "AWS CloudFront"
+  }
+}
