@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Script de despliegue para TommyWeb (Nexus CloudFront)
+# Script de despliegue para TommyWeb (TommyCDN)
 # Uso: bash deploy.sh
 
 echo "🚀 Iniciando despliegue de TommyWeb..."

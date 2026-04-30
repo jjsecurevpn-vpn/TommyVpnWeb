@@ -3,7 +3,7 @@
   "plans": [
     {
       "id": 1,
-      "name": "CloudFront — Pago único",
+      "name": "CloudFront — 30 Días",
       "price": "20",
       "currency": "USD",
       "features": [
@@ -12,7 +12,7 @@
         "Transferencia ilimitada",
         "SSL/HTTPS automático",
         "Soporte 24/7",
-        "Sin mensualidades",
+        "Renovación cada 30 días",
         "Soporte Premium"
       ],
       "recommended": true

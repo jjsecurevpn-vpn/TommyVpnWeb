@@ -41,7 +41,7 @@ const Navbar = () => {
           <div className="w-8 h-8 bg-accent rounded-lg flex items-center justify-center text-dark transform group-hover:rotate-180 transition-transform duration-500">
             <Hexagon size={20} fill="currentColor" />
           </div>
-          <span className="text-white font-black text-2xl tracking-tighter">NEXUS</span>
+          <span className="text-white font-black text-2xl tracking-tighter">TommyCDN</span>
         </div>
         
         {/* Desktop Menu */}

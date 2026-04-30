@@ -51,7 +51,7 @@ const Admin = () => {
     setData({
       ...data,
       domains: [...data.domains, { 
-        id: newId, url: 'nodo-x.nexus.cloud', status: 'ACTIVO', type: 'backup', provider: 'AWS CloudFront', description: 'Nodo de borde secundario' 
+        id: newId, url: 'nodo-x.tommycdn.cloud', status: 'ACTIVO', type: 'backup', provider: 'AWS CloudFront', description: 'Nodo de borde secundario' 
       }]
     });
   };
@@ -110,7 +110,7 @@ const Admin = () => {
             <Terminal size={20} />
             <span className="text-[10px] font-bold tracking-[0.4em] uppercase">Centro de Control</span>
           </div>
-          <h1 className="text-4xl font-black text-white">NEXUS <span className="text-accent">OS</span></h1>
+          <h1 className="text-4xl font-black text-white">TommyCDN <span className="text-accent">OS</span></h1>
         </div>
         
         <button 

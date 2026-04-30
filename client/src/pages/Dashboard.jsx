@@ -74,7 +74,7 @@ const Dashboard = () => {
           transition={{ delay: 0.1 }}
           className="text-4xl md:text-6xl font-black text-white leading-tight"
         >
-          Nexus <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-secondary">{t('hero.cloudfront')}</span>
+          TommyCDN <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-secondary">{t('hero.cloudfront')}</span>
         </motion.h1>
       </header>
 
@@ -94,7 +94,7 @@ const Dashboard = () => {
                   <div className="text-[10px] text-gray-500 font-bold uppercase tracking-widest">{t('hero.main_node')}</div>
                   <div className="flex flex-col md:flex-row items-center md:space-x-4 space-y-3 md:space-y-0">
                     <h2 className="text-xl sm:text-2xl md:text-4xl font-mono font-bold text-white tracking-tighter break-all">
-                      {activeDomain?.url || 'Nexus Cloud'}
+                      {activeDomain?.url || 'TommyCDN Cloud'}
                     </h2>
                     <button 
                       onClick={() => copyToClipboard(activeDomain?.url, 'active')}

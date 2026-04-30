@@ -40,7 +40,7 @@ const Buy = () => {
     { q: '¿Qué es un dominio CDN AWS?', a: 'Es un dominio propio con distribución de contenido en la red de Amazon Web Services. Permite servir tu contenido desde servidores cercanos al usuario final, con alta velocidad y disponibilidad.' },
     { q: '¿Cuánto tarda la activación?', a: 'En la mayoría de los casos el servicio se activa en menos de 15 minutos después de confirmar el pago. Nuestro bot gestiona el proceso automáticamente.' },
     { q: '¿Qué métodos de pago aceptan?', a: 'Aceptamos exclusivamente Binance Pay (USDT). Es el método más rápido y seguro para procesar activaciones internacionales instantáneas.' },
-    { q: '¿El pago es único o hay mensualidades?', a: 'Es un pago único de $20 USD. No hay suscripciones ni cargos recurrentes ocultos. Pagás una vez y el servicio queda activo.' },
+    { q: '¿El pago es único o hay mensualidades?', a: 'El servicio tiene una duración de 30 días. Para mantener la infraestructura activa, se debe renovar mensualmente. No hay contratos forzosos ni cargos ocultos.' },
     { q: '¿Qué pasa si el dominio principal cae?', a: 'Tenemos dominios de backup listos para activar. En la sección de dominios de la página podés ver el estado actual y copiar el alternativo. También podés contactarnos por Telegram o WhatsApp.' },
     { q: '¿Tienen soporte si tengo algún problema?', a: 'Sí, ofrecemos soporte 24/7 por Telegram y WhatsApp. Respondemos consultas técnicas y de activación en el menor tiempo posible.' }
   ];
@@ -72,7 +72,7 @@ const Buy = () => {
           {t('buy.hero_subtitle')} <br/>
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-secondary">{t('buy.hero_accent')}</span>
         </h1>
-        <p className="text-gray-400 max-w-lg mx-auto">Activación inmediata tras el pago único. Soporte humano real 24/7.</p>
+        <p className="text-gray-400 max-w-lg mx-auto">Activación inmediata tras el pago. Renovación cada 30 días. Soporte humano real 24/7.</p>
       </section>
 
       {/* Plans Section */}
@@ -206,7 +206,7 @@ const Buy = () => {
       <section className="text-center space-y-12 bg-gradient-to-b from-accent/5 to-transparent p-12 rounded-[3rem] border border-accent/10">
         <div className="space-y-6">
           <h3 className="text-4xl font-black text-white leading-tight">¿Listo para empezar?</h3>
-          <p className="text-gray-400 max-w-md mx-auto">Abrí el bot, pagá $20 USD y recibí tu CDN en minutos</p>
+          <p className="text-gray-400 max-w-md mx-auto">Abrí el bot, pagá $20 USD y recibí tu acceso por 30 días en minutos</p>
         </div>
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
           <a 
