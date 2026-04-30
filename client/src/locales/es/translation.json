@@ -6,7 +6,7 @@
   },
   "hero": {
     "active_infra": "Infraestructura Activa",
-    "cloudfront": "CloudFront",
+    "cloudfront": "CDN",
     "main_node": "Nodo Central Primario",
     "secondary_nodes": "Nodos Secundarios",
     "operational": "Totalmente Operativo",

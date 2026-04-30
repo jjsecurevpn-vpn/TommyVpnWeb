@@ -3,7 +3,7 @@
   "plans": [
     {
       "id": 1,
-      "name": "CloudFront — 30 Días",
+      "name": "Tommy CDN — 30 Días",
       "price": "20",
       "currency": "USD",
       "features": [
@@ -21,6 +21,6 @@
   "status": {
     "active": true,
     "lastCheck": "2026-04-29T11:45:00Z",
-    "provider": "AWS CloudFront"
+    "provider": "Tommy CDN"
   }
 }

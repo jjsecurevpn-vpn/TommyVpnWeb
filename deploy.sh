@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# Script de despliegue para TommyWeb (TommyCDN)
+# Script de despliegue para Tommy CDN
 # Uso: bash deploy.sh
 
-echo "🚀 Iniciando despliegue de TommyWeb..."
+echo "🚀 Iniciando despliegue de Tommy CDN..."
 
 # --- Variables de Configuración ---
 REMOTE_HOST="root@179.43.122.184"

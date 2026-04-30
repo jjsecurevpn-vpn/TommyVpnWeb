@@ -57,7 +57,7 @@ const Status = () => {
           <Activity size={12} className="animate-pulse" />
           <span>{t('hero.active_infra')}</span>
         </div>
-        <h1 className="text-4xl md:text-5xl font-black text-white tracking-tighter">Estado de la <span className="text-accent">Red TommyCDN</span></h1>
+        <h1 className="text-4xl md:text-5xl font-black text-white tracking-tighter">Estado de la <span className="text-accent">Red Tommy CDN</span></h1>
         <p className="text-gray-400 max-w-md mx-auto">Monitoreo en tiempo real de nodos globales y latencia de borde.</p>
       </header>
 
